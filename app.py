@@ -35,9 +35,7 @@ def init_log_config():
     sh = logging.StreamHandler()
 
     logfile = BASE_DIR + "/log/p2p{}.log".format(time.strftime("%y%m%d-%H%M%S"))  # 文件存放位置，和文件名格式，显示日期
-    print(logfile)
-    fh = logging.handlers.TimedRotatingFileHandler(logfile, when="M", interval=5, backupCount=6, encoding="utf-8")
-    print(logfile)
+    fh = logging.handlers.TimedRotatingFileHandler(logfile, when="M", interval=8, backupCount=3, encoding="utf-8")
     # 格式化器用于处理日志格式
     fmt = '%(asctime)s %(levelname)s [%(name)s] [%(filename)s(%(funcName)s:%(lineno)d)] - %(message)s'
     formatter = logging.Formatter(fmt)  # 格式化器
