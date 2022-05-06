@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>p2p金融项目测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="js/echarts.common.min.js"></script> -->
+    
+    
+<style type="text/css" media="screen">
+    body        { font-family: Microsoft YaHei,Consolas,arial,sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>p2p金融项目测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2022-05-06 17:06:26</p>
+<p class='attribute'><strong>运行时长:</strong> 0:02:09.871890</p>
+<p class='attribute'><strong>状态:</strong> 通过 41 失败 14 错误 2</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>test</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='failClass'>
+        <td>script.login.login</td>
+        <td>20</td>
+        <td>14</td>
+        <td>6</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',20)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001_get_img_code_random_decimals</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002_get_img_code_random_integer</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test003_get_img_code_Is_null</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test004_get_img_code_letter</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_get_sms_code_Is_data_true</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test006_get_sms_code_Is_imgCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test007_get_sms_code_Is_imgCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test008_get_sms_code_Is_smsCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test009_get_sms_code_Is_smsCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='failCase'><div class='testcase'>test010_get_imgCode_smsCode_adduser</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        失败</a>
+
+    <div id='div_ft1.10' class="popup_window">
+        <pre>ft1.10: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 89, in test010_get_imgCode_smsCode_adduser
+    assert_utils(self, response, 200, 200, '注册成功')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='failCase'><div class='testcase'>test011_get_imgCode_smsCode_adduser_invite_phone</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        失败</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <pre>ft1.11: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 98, in test011_get_imgCode_smsCode_adduser_invite_phone
+    assert_utils(self, response, 200, 200, '注册成功')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test012_adduser_invite_phone</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft1.13' class='none'>
+    <td class='failCase'><div class='testcase'>test013_register_pwd_null_failed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.13')" >
+        失败</a>
+
+    <div id='div_ft1.13' class="popup_window">
+        <pre>ft1.13: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 116, in test013_register_pwd_null_failed
+    assert_utils(self, response, 200, 100, '密码不能为空')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 37, in assert_utils
+    self.assertIn(desc, response.json().get("description"))
+AssertionError: '密码不能为空' not found in '手机已存在!'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test014_register_ErrorPwd_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='failCase'><div class='testcase'>test015_register_ErrorSmsCode_failed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        失败</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <pre>ft1.15: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 134, in test015_register_ErrorSmsCode_failed
+    assert_utils(self, response, 200, 100, '验证码错误')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 37, in assert_utils
+    self.assertIn(desc, response.json().get("description"))
+AssertionError: '验证码错误' not found in '手机已存在!'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.16' class='none'>
+    <td class='failCase'><div class='testcase'>test016_register_not_dy_server_failed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.16')" >
+        失败</a>
+
+    <div id='div_ft1.16' class="popup_window">
+        <pre>ft1.16: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 143, in test016_register_not_dy_server_failed
+    assert_utils(self, response, 200, 100, '验证码错误')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 37, in assert_utils
+    self.assertIn(desc, response.json().get("description"))
+AssertionError: '验证码错误' not found in '手机已存在!'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test017_user_login_succeed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft1.18' class='none'>
+    <td class='failCase'><div class='testcase'>test018_user_login_succeed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.18')" >
+        失败</a>
+
+    <div id='div_ft1.18' class="popup_window">
+        <pre>ft1.18: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\login.py", line 155, in test018_user_login_succeed
+    assert_utils(self, response, 200, 100, '用户不存在')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 37, in assert_utils
+    self.assertIn(desc, response.json().get("description"))
+AssertionError: '用户不存在' not found in '密码错误1次,达到3次将锁定账户'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test019_user_login_succeed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test020_user_login_PwdError_finallyLoginSucceed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+    <tr class='errorClass'>
+        <td>script.Approverealname.approve</td>
+        <td>4</td>
+        <td>0</td>
+        <td>3</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c2',4)">详情</a></td>
+    </tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test021AppRoveLName</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        错误</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <pre>ft2.1: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\Approverealname.py", line 25, in test021AppRoveLName
+    response = self.approveApi.ApproverealName(self.session, app.real_name1, app.card_id1)
+AttributeError: 'approveAPI' object has no attribute 'ApproverealName'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='failCase'><div class='testcase'>test022AppRoveLName</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        失败</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <pre>ft2.2: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\Approverealname.py", line 34, in test022AppRoveLName
+    assert_utils(self, response, 200, 200, '登录成功')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test023AppRoveLName</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        失败</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <pre>ft2.3: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\Approverealname.py", line 44, in test023AppRoveLName
+    assert_utils(self, response, 200, 200, '登录成功')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='failCase'><div class='testcase'>test024getAppRoveRealName</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        失败</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <pre>ft2.4: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\Approverealname.py", line 59, in test024getAppRoveRealName
+    self.assertIn('328****244', response.json().get('card_id'))
+AssertionError: '328****244' not found in ''
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='errorClass'>
+        <td>script.tender.tender</td>
+        <td>4</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c3',4)">详情</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001_risk_appraisal_succeed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='failCase'><div class='testcase'>test002_risk_appraisal_Wrong_answer</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
+        失败</a>
+
+    <div id='div_ft3.2' class="popup_window">
+        <pre>ft3.2: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\tender.py", line 35, in test002_risk_appraisal_Wrong_answer
+    self.assertIn("error", response.json().get("data"))
+AssertionError: 'error' not found in '提交成功'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.3' class='none'>
+    <td class='failCase'><div class='testcase'>test003_get_tender_msg</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.3')" >
+        失败</a>
+
+    <div id='div_ft3.3' class="popup_window">
+        <pre>ft3.3: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\tender.py", line 45, in test003_get_tender_msg
+    self.assertEqual(200, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test004_tender_succeed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.4')" >
+        错误</a>
+
+    <div id='div_ft3.4' class="popup_window">
+        <pre>ft3.4: {'status': 100, 'description': '可用余额不足!'}
+Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\tender.py", line 58, in test004_tender_succeed
+    from_data = response.json().get("description").get("form")
+AttributeError: 'str' object has no attribute 'get'
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>script.trust.trust_test</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c4',4)">详情</a></td>
+    </tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001trust</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002_recharge_verify_code</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test003_get_recharge_msg</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test004_recharge</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+    <tr class='failClass'>
+        <td>script.tender_process.tender_flow</td>
+        <td>5</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c5',5)">详情</a></td>
+    </tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='failCase'><div class='testcase'>test001_register_succeed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        失败</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <pre>ft5.1: Traceback (most recent call last):
+  File "D:\JetBrains\apiTESTp2p\script\tender_process.py", line 52, in test001_register_succeed
+    assert_utils(self, response, 200, 200, '注册成功')
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 200 != 100
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002_login</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test003_user_approve</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test004_user_recharge</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_tender_succeed</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
+        通过</a>
+
+    <div id='div_pt5.5' class="popup_window">
+        <pre>pt5.5: {'status': 200, 'description': {'form': '&lt;form name=\'easypaysubmit\' id=\'easypaysubmit\' target=\'_blank\' method=\'post\' action=\'http://121.43.169.97:8000/muser/publicRequests\'&gt;&lt;input name=\'Version\' type=\'hidden\' value=\'20\'/&gt;&lt;input name=\'CmdId\' type=\'hidden\' value=\'InitiativeTender\'/&gt;&lt;input name=\'MerCustId\' type=\'hidden\' value=\'6000060007313892\'/&gt;&lt;input name=\'OrdId\' type=\'hidden\' value=\'22050617073276876586\'/&gt;&lt;input name=\'OrdDate\' type=\'hidden\' value=\'20220506\'/&gt;&lt;input name=\'TransAmt\' type=\'hidden\' value=\'1000.00\'/&gt;&lt;input name=\'UsrCustId\' type=\'hidden\' value=\'6020220506170727\'/&gt;&lt;input name=\'MaxTenderRate\' type=\'hidden\' value=\'0.20\'/&gt;&lt;input name=\'BorrowerDetails\' type=\'hidden\' value=\'[{"BorrowerCustId":"6020220505014929","BorrowerAmt":"1000.00","BorrowerRate":"0.90","ProId":""}]\'/&gt;&lt;input name=\'IsFreeze\' type=\'hidden\' value=\'Y\'/&gt;&lt;input name=\'FreezeOrdId\' type=\'hidden\' value=\'22050617073276876586\'/&gt;&lt;input name=\'RetUrl\' type=\'hidden\' value=\'http://user-p2p-test.itheima.net/trust/chinapnr/tender/return/22050617073276876586\'/&gt;&lt;input name=\'BgRetUrl\' type=\'hidden\' value=\'https://www.baidu.com/\'/&gt;&lt;input name=\'MerPriv\' type=\'hidden\' value=\'\'/&gt;&lt;input name=\'ReqExt\' type=\'hidden\' value=\'\'/&gt;&lt;input name=\'ChkValue\' type=\'hidden\' value=\'-101\'/&gt;&lt;input name=\'CharSet\' type=\'hidden\' value=\'UTF-8\'/&gt;&lt;/form&gt;&lt;script&gt;document.forms[\'easypaysubmit\'].submit();&lt;/script&gt;'}}
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='failClass'>
+        <td>script.login_param.login_param</td>
+        <td>20</td>
+        <td>18</td>
+        <td>2</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c6',20)">详情</a></td>
+    </tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001get_img_code_0_float</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001get_img_code_1_int</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001get_img_code_2_null</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test001get_img_code_3_char</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002get_sms_code_0_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002get_sms_code_1_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test002get_sms_code_2_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test003_get_sms_code_Is_smsCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test004_get_sms_code_Is_smsCode_failed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_register_0_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_register_1_13822345678</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft6.12' class='none'>
+    <td class='failCase'><div class='testcase'>test005_register_2_13832345679</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.12')" >
+        失败</a>
+
+    <div id='div_ft6.12' class="popup_window">
+        <pre>ft6.12: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\JetBrains\apiTESTp2p\script\login_param.py", line 90, in test005_register
+    assert_utils(self, response, status_code, status, description)
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 100 != 200
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_register_3_13982345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_register_4_13982345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='ft6.15' class='none'>
+    <td class='failCase'><div class='testcase'>test005_register_5_13982345679</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.15')" >
+        失败</a>
+
+    <div id='div_ft6.15' class="popup_window">
+        <pre>ft6.15: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\JetBrains\apiTESTp2p\script\login_param.py", line 90, in test005_register
+    assert_utils(self, response, status_code, status, description)
+  File "D:\JetBrains\apiTESTp2p\utils.py", line 36, in assert_utils
+    self.assertEqual(status, response.json().get("status"))
+AssertionError: 100 != 200
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test005_register_6_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test006_login_0_13992345679</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test006_login_1_13822345677</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test006_login_2_13822345678</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test007_user_login_PwdError_finallyLoginSucceed</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>57</td>
+            <td>41</td>
+            <td>14</td>
+            <td>2</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            color: ['#95b75d', 'grey', '#b64645'],
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:41, name:'通过'},
+                        {value:14, name:'失败'},
+                        {value:2, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>
