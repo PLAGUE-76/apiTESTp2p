@@ -1,0 +1,27 @@
+2022-05-06 14:04:53,460 INFO [root] [__init__.py(<module>:5)] - info
+2022-05-06 14:04:53,460 ERROR [root] [__init__.py(<module>:6)] - error
+2022-05-06 14:04:53,701 INFO [root] [login_param.py(test001get_img_code:34)] - r = 0.6067687481053453 get_ImgCode = <Response [200]>
+2022-05-06 14:04:53,744 INFO [root] [login_param.py(test001get_img_code:34)] - r = 7760 get_ImgCode = <Response [200]>
+2022-05-06 14:04:53,789 INFO [root] [login_param.py(test001get_img_code:34)] - r =  get_ImgCode = <Response [404]>
+2022-05-06 14:04:53,837 INFO [root] [login_param.py(test001get_img_code:34)] - r = addgf get_ImgCode = <Response [400]>
+2022-05-06 14:04:53,881 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.13844098969352714 get_ImgCode = <Response [200]>
+2022-05-06 14:04:53,915 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:53,954 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.13844098969352714 get_ImgCode = <Response [200]>
+2022-05-06 14:04:53,972 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 14:04:54,014 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.13844098969352714 get_ImgCode = <Response [200]>
+2022-05-06 14:04:54,034 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 14:04:54,208 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,230 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,309 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,332 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,417 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,443 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,512 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,530 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '验证码错误!'}
+2022-05-06 14:04:54,611 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,635 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,720 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,745 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,811 INFO [root] [login_param.py(test005_register:67)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:04:54,829 INFO [root] [login_param.py(test005_register:72)] - register = {'status': 100, 'description': '手机已存在!'}
+2022-05-06 14:04:54,884 INFO [root] [login_param.py(test007_user_login_PwdError_finallyLoginSucceed:86)] - login response = {'status': 100, 'description': '由于连续输入错误密码达到上限，账号已被锁定，请于1.0分钟后重新登录'}

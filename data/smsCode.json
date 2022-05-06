@@ -1,0 +1,29 @@
+{
+  "test_get_sms_code":[
+    {
+      "dec": "获取短信验证码成功",
+      "phone": "13992345679",
+      "ImgCode":"8888",
+      "status_code": 200,
+      "status": 200,
+      "description": "短信发送成功"
+    },
+    {
+      "dec": "错误图片验证码，获取短信验证码失败",
+      "phone": "13992345679",
+      "ImgCode":"9999",
+      "status_code": 200,
+      "status": 100,
+      "description": "图片验证码错误"
+    },
+    {
+      "dec": "图片验证码为空，获取短信验证码失败",
+      "phone": "13992345679",
+      "ImgCode":"",
+      "status_code": 200,
+      "status": 100,
+      "description": "图片验证码错误"
+    }
+
+  ]
+}

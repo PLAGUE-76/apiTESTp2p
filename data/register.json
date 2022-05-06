@@ -1,0 +1,88 @@
+{
+  "test_register": [
+    {
+      "dec": "图片短信验证码正确，注册成功",
+      "phone": "13992345679",
+      "password": "test123456",
+      "verifycode": "8888",
+      "phone_code": "666666",
+      "invite_phone": "",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 200,
+      "description": "注册成功"
+    },
+    {
+      "dec": "图片短信验证码正确，输入邀请人，注册成功",
+      "phone": "13822345678",
+      "password": "test123456",
+      "verifycode": "8888",
+      "phone_code": "666666",
+      "invite_phone": "13992345679",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 200,
+      "description": "注册成功"
+    },
+    {
+      "dec": "输入密码为空，注册失败",
+      "phone": "13832345679",
+      "password": "",
+      "verifycode": "8888",
+      "phone_code": "666666",
+      "invite_phone": "",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 100,
+      "description": "密码不能为空"
+    },
+    {
+      "dec": "输入图片验证码错误，注册失败",
+      "phone": "13982345679",
+      "password": "test123456",
+      "verifycode": "0000",
+      "phone_code": "666666",
+      "invite_phone": "",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 100,
+      "description": "验证码错误!"
+    },
+    {
+      "dec": "输入短信验证码错误，注册失败",
+      "phone": "13982345679",
+      "password": "test123456",
+      "verifycode": "8888",
+      "phone_code": "999999",
+      "invite_phone": "",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 100,
+      "description": "验证码错误"
+    },
+    {
+      "dec": "不同意协议，注册失败",
+      "phone": "13982345679",
+      "password": "test123456",
+      "verifycode": "8888",
+      "phone_code": "666666",
+      "invite_phone": "",
+      "dy_server": "off",
+      "status_code": 200,
+      "status": 100,
+      "description": "必须同意协议才能注册"
+    },
+    {
+      "dec": "已注册的手机号码，注册失败",
+      "phone": "13992345679",
+      "password": "test123456",
+      "verifycode": "8888",
+      "phone_code": "666666",
+      "invite_phone": "",
+      "dy_server": "on",
+      "status_code": 200,
+      "status": 100,
+      "description": "手机已存在!"
+    }
+  ]
+}

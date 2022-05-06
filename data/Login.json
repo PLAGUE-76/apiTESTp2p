@@ -1,0 +1,21 @@
+{
+  "test_login": [
+    {"dec": "正确用户名密码，登录成功","phone": "13992345679", "pwd": "test123456", "status_code": 200, "status": 200, "description": "登录成功"},
+    {
+      "dec": "未注册账号，登录失败",
+      "phone": "13822345677",
+      "pwd": "test123456",
+      "status_code": 200,
+      "status": 100,
+      "description": "用户不存在"
+    },
+    {
+      "dec": "密码为空，登录失败",
+      "phone": "13822345678",
+      "pwd": "",
+      "status_code": 200,
+      "status": 100,
+      "description": "密码不能为空"
+    }
+  ]
+}

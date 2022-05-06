@@ -1,0 +1,103 @@
+2022-05-06 13:29:10,406 INFO [root] [__init__.py(<module>:5)] - info
+2022-05-06 13:29:10,407 ERROR [root] [__init__.py(<module>:6)] - error
+2022-05-06 13:29:10,665 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:10,748 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:10,810 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:10,892 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,023 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,103 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,172 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,245 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,356 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,424 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,492 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,551 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,663 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,736 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,812 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,891 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:11,937 INFO [root] [login_param.py(test002get_sms_code:53)] - r = 0.2466811824514814 get_ImgCode = <Response [200]>
+2022-05-06 13:29:11,958 INFO [root] [login_param.py(test002get_sms_code:56)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 13:29:12,032 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,107 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,183 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,259 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,310 INFO [root] [login_param.py(test002get_sms_code:53)] - r = 0.2466811824514814 get_ImgCode = <Response [200]>
+2022-05-06 13:29:12,333 INFO [root] [login_param.py(test002get_sms_code:56)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 13:29:12,404 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,485 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,543 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,603 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,642 INFO [root] [login_param.py(test002get_sms_code:53)] - r = 0.2466811824514814 get_ImgCode = <Response [200]>
+2022-05-06 13:29:12,659 INFO [root] [login_param.py(test002get_sms_code:56)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 13:29:12,740 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,810 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,887 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:12,957 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,093 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,163 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,240 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,315 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,426 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,494 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,576 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,637 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,718 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:13,741 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:13,812 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,878 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:13,959 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,030 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,104 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:14,124 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:14,196 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,269 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,344 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,401 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,475 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:14,496 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:14,557 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,638 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,705 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,786 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:14,862 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:14,882 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:14,942 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,021 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,093 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,175 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,242 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:15,273 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:15,361 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,429 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,506 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,588 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,674 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:15,698 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:15,779 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,838 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,900 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:15,961 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,047 INFO [root] [login_param.py(test005_register:80)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 13:29:16,070 INFO [root] [login_param.py(test005_register:85)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 13:29:16,154 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,230 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,313 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,383 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,462 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,544 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,608 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,677 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,751 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,811 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,869 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:16,950 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,027 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,082 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,146 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,220 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,268 INFO [root] [login_param.py(test007_user_login_PwdError_finallyLoginSucceed:99)] - login response = {'status': 100, 'description': '用户不存在'}
+2022-05-06 13:29:17,330 INFO [root] [login_param.py(tearDown:23)] - delete sql = delete from mb_member_register_log where phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,399 INFO [root] [login_param.py(tearDown:26)] - delete sq2 = delete i.* from mb_member_login_log i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,478 INFO [root] [login_param.py(tearDown:29)] - delete sq3 = delete i.* from mb_member_info i INNER JOIN mb_member m on i.member_id = m.id WHERE m.phone in ('13992345679','13822345678','13832345679','13992345679');
+2022-05-06 13:29:17,543 INFO [root] [login_param.py(tearDown:32)] - delete sq4 = delete from mb_member WHERE phone in ('13992345679','13822345678','13832345679','13992345679');

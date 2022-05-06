@@ -1,0 +1,27 @@
+2022-05-06 14:03:54,676 INFO [root] [__init__.py(<module>:5)] - info
+2022-05-06 14:03:54,676 ERROR [root] [__init__.py(<module>:6)] - error
+2022-05-06 14:03:54,848 INFO [root] [login_param.py(test001get_img_code:34)] - r = 0.9949481890390578 get_ImgCode = <Response [200]>
+2022-05-06 14:03:54,885 INFO [root] [login_param.py(test001get_img_code:34)] - r = 7598 get_ImgCode = <Response [200]>
+2022-05-06 14:03:54,925 INFO [root] [login_param.py(test001get_img_code:34)] - r =  get_ImgCode = <Response [404]>
+2022-05-06 14:03:54,972 INFO [root] [login_param.py(test001get_img_code:34)] - r = fgdff get_ImgCode = <Response [400]>
+2022-05-06 14:03:55,009 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.8990138561065925 get_ImgCode = <Response [200]>
+2022-05-06 14:03:55,038 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,075 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.8990138561065925 get_ImgCode = <Response [200]>
+2022-05-06 14:03:55,092 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 14:03:55,140 INFO [root] [login_param.py(test002get_sms_code:41)] - r = 0.8990138561065925 get_ImgCode = <Response [200]>
+2022-05-06 14:03:55,163 INFO [root] [login_param.py(test002get_sms_code:44)] - get_SmsCode = {'status': 100, 'description': '图片验证码错误'}
+2022-05-06 14:03:55,338 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,358 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,428 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,445 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,521 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,541 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,618 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,638 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,720 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,742 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,824 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,846 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:55,937 INFO [root] [login_param.py(test005_register:68)] - get_SmsCode = {'status': 200, 'description': '短信发送成功'}
+2022-05-06 14:03:55,960 INFO [root] [login_param.py(test005_register:73)] - register = {'status': 100, 'description': '验证码不能为空!'}
+2022-05-06 14:03:56,019 INFO [root] [login_param.py(test007_user_login_PwdError_finallyLoginSucceed:87)] - login response = {'status': 100, 'description': '用户不存在'}
