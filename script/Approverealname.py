@@ -22,7 +22,7 @@ class approve(unittest.TestCase):
         logging.info("login response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '登录成功')
 
-        response = self.approveApi.ApproverealName(self.session, app.real_name1, app.card_id1)
+        response = self.approveApi.approverealName(self.session, app.real_name1, app.card_id1)
         print(response.json())
         logging.info("approve response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '提交成功!')
@@ -33,7 +33,7 @@ class approve(unittest.TestCase):
         logging.info("login response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '登录成功')
 
-        response = self.approveApi.ApproverealName(self.session, real_name="", card_id=app.card_id)
+        response = self.approveApi.approverealName(self.session, real_name="", card_id=app.card_id)
         logging.info("approve response = {}".format(response.json()))
         assert_utils(self, response, 200, 100, '姓名未填写')
 
@@ -43,7 +43,7 @@ class approve(unittest.TestCase):
         logging.info("login response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '登录成功')
 
-        response = self.approveApi.ApproverealName(self.session, app.real_name, card_id="")
+        response = self.approveApi.approverealName(self.session, app.real_name, card_id="")
         logging.info("approve response = {}".format(response.json()))
         assert_utils(self, response, 200, 100, '请输入身份证号')
 
