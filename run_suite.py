@@ -1,5 +1,5 @@
 import unittest
-import app, time
+import app
 from lib.HTMLTestRunner_PY3 import HTMLTestRunner
 from script.Approverealname import approve
 from script.tender import tender
