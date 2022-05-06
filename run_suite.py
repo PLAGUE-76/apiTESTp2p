@@ -1,7 +1,6 @@
 import unittest
 import app, time
 from lib.HTMLTestRunner_PY3 import HTMLTestRunner
-from script.login import login
 from script.Approverealname import approve
 from script.tender import tender
 from script.trust import trust_test
