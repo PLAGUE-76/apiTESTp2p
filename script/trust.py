@@ -35,11 +35,11 @@ class trust_test(unittest.TestCase):
     # 获取充值验证码
     def test002_recharge_verify_code(self):
         response = self.login.user_login(self.session)
-        # logging.info("login response= {}".format(response.text))
         assert_utils(self, response, 200, 200, "登录成功")
+        # logging.info("login response= {}".format('登录成功'))
         response = self.trust.get_recharge_verify_code(self.session, str(self.r))
-        logging.info("recharge_verify_code= {}".format(response.text))
         self.assertEqual(200, response.status_code)
+        logging.info("recharge_verify_code= {}".format("获取充值验证码成功"))
 
     # 验证码错误，获取充值信息失败
     def test003_get_recharge_msg(self):
