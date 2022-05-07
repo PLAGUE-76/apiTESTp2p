@@ -35,7 +35,7 @@ class trust_test(unittest.TestCase):
     # 获取充值验证码
     def test002_recharge_verify_code(self):
         response = self.login.user_login(self.session)
-        logging.info("login response= {}".format(response.text))
+        # logging.info("login response= {}".format(response.text))
         assert_utils(self, response, 200, 200, "登录成功")
         response = self.trust.get_recharge_verify_code(self.session, str(self.r))
         logging.info("recharge_verify_code= {}".format(response.text))
@@ -47,7 +47,7 @@ class trust_test(unittest.TestCase):
         logging.info("login response= {}".format(response.text))
         assert_utils(self, response, 200, 200, "登录成功")
         response = self.trust.get_recharge_verify_code(self.session, str(self.r))
-        logging.info("recharge_verify_code= {}".format(response.text))
+        # logging.info("recharge_verify_code= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         response = self.trust.get_recharge(self.session, amount="100000", valicode="9998")
         logging.info("get_recharge= {}".format(response.text))
@@ -56,10 +56,10 @@ class trust_test(unittest.TestCase):
     # 调取第三方接口请求，充值成功
     def test004_recharge(self):
         response = self.login.user_login(self.session)
-        logging.info("login response= {}".format(response.text))
+        # logging.info("login response= {}".format(response.text))
         assert_utils(self, response, 200, 200, "登录成功")
         response = self.trust.get_recharge_verify_code(self.session, str(self.r))
-        logging.info("recharge_verify_code= {}".format(response.text))
+        # logging.info("recharge_verify_code= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         response = self.trust.get_recharge(self.session, amount="100000")
         from_data = response.json().get("description").get("form")

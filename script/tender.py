@@ -37,26 +37,24 @@ class tender(unittest.TestCase):
 
     # 获取投资页详情
     def test003_get_tender_msg(self):
-        response = self.login.user_login(self.session, phone=app.phone4)
+        response = self.login.user_login(self.session, app.phone1)
         assert_utils(self, response, 200, 200, "登录成功")
         logging.info("login response{}".format(response.json()))
-        response = self.Tender.get_tender(self.session, "702")
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(200, response.json().get("status"))
-        self.assertIn("702", response.json().get("data").get("loan_info").get("id"))
+        response = self.Tender.get_tender(self.session, app.tb_id)
+        self.assertIn("794", response.json().get("data").get("loan_info").get("id"))
+        assert_utils(self,response,200,200,'OK')
         logging.info("get_tender response{}".format(response.json()))
 
     # 投资转第三方成功
     def test004_tender_succeed(self):
-        response = self.login.user_login(self.session, phone=app.phone1)
+        response = self.login.user_login(self.session, app.phone1)
         assert_utils(self, response, 200, 200, "登录成功")
         logging.info("login response{}".format(response.json()))
         response = self.Tender.tender(self.session, app.tb_id)  # 投资申请
         self.assertEqual(200, response.status_code)
-        logging.info("tender response{}".format(response.text))
-        print(response.json())
+        # logging.info("tender response{}".format(response.text))
         from_data = response.json().get("description").get("form")
-        logging.info("from_data response= {}".format(response.json()))
+        # logging.info("from_data response= {}".format(response.json()))
         response = soup_third_api(from_data)  # 第三方跳转申请
         logging.info("thirdAPI response= {}".format(response.text))
         self.assertEqual(200, response.status_code)

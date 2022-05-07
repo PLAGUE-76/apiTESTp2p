@@ -42,7 +42,7 @@ class tender_flow(unittest.TestCase):
     # 注册流程
     def test001_register_succeed(self):
         response = self.login_api.get_ImgCode(self.session, str(self.r))  # 获取图片验证码
-        logging.info("get_ImgCode{}".format(response.text))
+        # logging.info("get_ImgCode{}".format(response.text))
         self.assertEqual(200, response.status_code)
         response = self.login_api.get_SmsCode(self.session, app.phone1)  # 获取短信验证码
         logging.info("get_SmsCode{}".format(response.json()))
@@ -65,17 +65,17 @@ class tender_flow(unittest.TestCase):
         logging.info("approverealName{}".format(response.json()))
         assert_utils(self, response, 200, 200, '提交成功!')
         response = self.trustAPI.trust_requests(self.session)  # 申请开户
-        logging.info("trust_requests{}".format(response.text))
+        # logging.info("trust_requests{}".format(response.text))
         self.assertEqual(200, response.status_code)
         self.assertEqual(200, response.json().get("status"))
         from_data = response.json().get("description").get("form")  # 调取响应中的URL
-        logging.info("from_data response= {}".format(response.json()))
+        # logging.info("from_data response= {}".format(response.json()))
         response = soup_third_api(from_data)  # 用封装好的函数解析响应内容,并提取内容
-        logging.info("third_api_succeed= {}".format(response.text))
+        # logging.info("third_api_succeed= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         self.assertIn('UserRegister OK', response.text)
         response = self.tenderAPI.risk_appraisal(self.session)  # 风险评估
-        logging.info("risk_appraisal= {}".format(response.json()))
+        # logging.info("risk_appraisal= {}".format(response.json()))
         assert_utils(self, response, 200, 200, "OK")
         self.assertEqual("提交成功", response.json().get("data"))
 
@@ -83,10 +83,10 @@ class tender_flow(unittest.TestCase):
     def test004_user_recharge(self):
         sleep(1)
         response = self.trustAPI.get_recharge_verify_code(self.session, str(self.r))  # 获取充值验证码
-        logging.info("third_api_succeed= {}".format(response.text))
+        # logging.info("third_api_succeed= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         response = self.trustAPI.get_recharge(self.session, amount="100000")  # 充值申请
-        logging.info("recharge_requests= {}".format(response.text))
+        # logging.info("recharge_requests= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         from_data = response.json().get("description").get("form")  # 第三方充值
         logging.info("recharge_url= {}".format(response.json()))
@@ -101,9 +101,8 @@ class tender_flow(unittest.TestCase):
         response = self.tenderAPI.tender(self.session, app.tb_id)  # 投资请求
         # logging.info("third_recharge_succeed= {}".format(response.text))
         self.assertEqual(200, response.status_code)
-        print(response.json())
         from_data = response.json().get("description").get("form")
         response = soup_third_api(from_data)  # 第三方投资请求
-        # logging.info("third_tender_succeed= {}".format(response.text))
+        logging.info("third_tender_succeed= {}".format(response.text))
         self.assertEqual(200, response.status_code)
         self.assertIn('InitiativeTender OK', response.text)

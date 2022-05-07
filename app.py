@@ -23,8 +23,8 @@ DB_user = 'root'
 DB_password = 'Itcast_p2p_20191228'
 DB_mem = 'czbk_member'
 DB_finance = 'czbk_finance'
-tender_pwd = '123456789'
-tb_id = 724
+tender_pwd = '123'
+tb_id = 794
 
 
 def init_log_config():

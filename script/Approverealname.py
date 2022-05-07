@@ -23,23 +23,21 @@ class approve(unittest.TestCase):
         assert_utils(self, response, 200, 200, '登录成功')
 
         response = self.approveApi.approverealName(self.session, app.real_name1, app.card_id1)
-        print(response.json())
         logging.info("approve response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '提交成功!')
 
     # 姓名为空，实名认证失败
     def test022AppRoveLName(self):
-        response = self.login_api.user_login(self.session, phone="13129964788", pwd=app.pwd)
+        response = self.login_api.user_login(self.session, phone=app.phone2)
         logging.info("login response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '登录成功')
-
         response = self.approveApi.approverealName(self.session, real_name="", card_id=app.card_id)
         logging.info("approve response = {}".format(response.json()))
-        assert_utils(self, response, 200, 100, '姓名未填写')
+        assert_utils(self, response, 200, 100, '身份证姓名不能为空')
 
     # 身份证号为空，实名认证失败
     def test023AppRoveLName(self):
-        response = self.login_api.user_login(self.session, phone="13129964789",pwd=app.pwd)
+        response = self.login_api.user_login(self.session, phone=app.phone3)
         logging.info("login response = {}".format(response.json()))
         assert_utils(self, response, 200, 200, '登录成功')
 
@@ -56,4 +54,4 @@ class approve(unittest.TestCase):
         response = self.approveApi.getApproverealName(self.session)
         logging.info("approve response = {}".format(response.json()))
         self.assertEqual(200, response.status_code)
-        self.assertIn('328****244', response.json().get('card_id'))
+        self.assertIn('896****610', response.json().get('card_id'))
